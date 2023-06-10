@@ -9,7 +9,8 @@
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build -s public",
-    "deploy-storybook": "pnpm storybook:build && touch ./storybook-static/.nojekyll && gh-pages -d ./storybook-static -t true"
+    "deploy-storybook": "storybook-to-ghpages",
+    "deploy": "touch ./output_folder/.nojekyll && gh-pages -d output_folder -t true"
   },
   "dependencies": {
     "@radix-ui/react-checkbox": "^1.0.0",
