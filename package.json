@@ -8,8 +8,9 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
-    "deploy-storybook": "storybook-to-ghpages"
+    "predeploy": "npm run build-storybook",
+    "deploy-storybook": "gh-pages -d storybook-static",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "@radix-ui/react-checkbox": "^1.0.0",
@@ -38,6 +39,7 @@
     "@vitejs/plugin-react": "^2.1.0",
     "autoprefixer": "^10.4.14",
     "babel-loader": "^8.2.5",
+    "gh-pages": "^5.0.0",
     "postcss": "^8.4.24",
     "prop-types": "^15.8.1",
     "storybook": "^7.0.20",
