@@ -24,15 +24,8 @@ jobs:
       - name: Build Storybook
         run: npm run build-storybook
 
-      - name: Deploy to GitHub Pages
-        if: success()
-        uses: crazy-max/ghaction-github-pages@v3
+      - name: Deploy Storybook
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          target_branch: gh-pages
-          build_dir: storybook-static
-          commit_message: 'chore(deploy): Storybook'
-          keep_history: false
-          jekyll: false
-          fqdn: outline.phase2tech.com
-        env:
-          GH_TOKEN: ${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
