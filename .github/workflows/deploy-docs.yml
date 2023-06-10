@@ -35,4 +35,4 @@ jobs:
           jekyll: false
           fqdn: outline.phase2tech.com
         env:
-          GITHUB_TOKEN: ${{ secrets.NPM_GITHUB_PACKAGES }}
+          GH_TOKEN: ${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}
